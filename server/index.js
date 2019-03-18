@@ -26,12 +26,17 @@ class Client{
 
 // On client connection
 io.on("connection", function(socket) {
-  console.log("Client Connected\n");
+    console.log("Client Connected\n");
 
-  var client = new Client();
+    var client = new Client();
 
-  // Create sensor Start & Stop event listeners
-  for (let sensor in client.sensors) {
+    // * On Set LED
+    socket.on("set LED", (color)=>{
+        matrix.led.set(color);
+    });
+
+    // Create sensor Start & Stop event listeners
+    for (let sensor in client.sensors) {
     // * On Sensor Start
     socket.on(sensor + " start", ()=>{
         client.sensors[sensor] = true;
@@ -49,6 +54,6 @@ io.on("connection", function(socket) {
     });
   }
 
-  // Emit ready status to unity
-  socket.emit("Initialized");
+    // Emit ready status to unity
+    socket.emit("Initialized");
 });
