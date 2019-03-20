@@ -1,4 +1,3 @@
-// INITIAL VARIABLES \\
 const matrix = require("@matrix-io/matrix-lite");
 const io = require("socket.io")(6001); // Start socket.io server
 console.log("\nServer Started!\n");
@@ -27,12 +26,11 @@ class Client{
 // On client connection
 io.on("connection", function(socket) {
     console.log("Client Connected\n");
-
     var client = new Client();
 
-    // * On Set LED
-    socket.on("set LED", (color)=>{
-        matrix.led.set(color);
+    // * On MATRIX Disconnecting
+    socket.on("disconnect", ()=>{
+        console.log("Client Disconnected");
     });
 
     // Create sensor Start & Stop event listeners
