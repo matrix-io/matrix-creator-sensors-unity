@@ -34,3 +34,31 @@ The scenes in the example folders contain a basic example of how to interact wit
 
 ### 5. Good To Go
 With the Unity example pointing to your Raspberry Pi, you can run the example and move your MATRIX around to see the IMU sensor in action.
+
+# Usage
+The MATRIX Prefab in `client.unitypackage` can be dropped into any scene to connect to your MATRIX Creator. Assuming the IP address is set correctly and the sensor you want is selected from the checkbox.
+
+Below are the command you can use in your C# scripts to read each sensor.
+```c#
+Matrix.Imu.yaw
+Matrix.Imu.pitch
+Matrix.Imu.roll
+Matrix.Imu.accelX
+Matrix.Imu.accelY
+Matrix.Imu.accelZ
+Matrix.Imu.gyroX
+Matrix.Imu.gyroY
+Matrix.Imu.gyroZ
+Matrix.Imu.magX
+Matrix.Imu.magY
+Matrix.Imu.magZ
+
+Matrix.UV.value
+
+Matrix.Pressure.pressure
+Matrix.Pressure.altitude
+Matrix.Pressure.temperature
+
+Matrix.Humidity.humidity
+Matrix.Humidity.temperature
+```
