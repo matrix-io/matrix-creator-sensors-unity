@@ -22,11 +22,12 @@ Once installed, clone this repo and run the script inside the server folder.
 ```
 git clone https://github.com/matrix-io/matrix-creator-sensors-unity/
 cd matrix-creator-sensors-unity/server
+npm install
 node index.js
 ```
 
 ### 4. Setup The Unity Client
-With your Raspberry Pi ready, you shouuld now manually download this repository to your personal computer and extract the `client.unitypackage` file into Unity. This contains all the scenes and assets you'll need.
+With your Raspberry Pi ready, you should now manually download this repository to your personal computer and extract the `client.unitypackage` file into Unity. This contains all the scenes and assets you'll need.
 
 The scenes in the example folders contain a basic example of how to interact with the IMU of your MATRIX Creator. Keep in mind, you'll need to edit the `MATRIX` game object to point to the IP address of your Raspberry Pi. Aside from the IP address, do not edit anything else from the URL.
 
